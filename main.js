@@ -58,19 +58,37 @@ class Main {
   }
 
   probarDoctor() {
-    let doctor
-    console.log(this.doctor.getPerfil());
+    let doctor = new Doctor ({
+      nombre: new Nombre ("Bedivere"),
+      especialidad: new Especialidad("medico de gurrra"),
+      telefono: 3121608890,
+      celula: new Celula ("agr155fn50fx5")
+    })
+    console.log(doctor.getPerfil());
   }
 
   probarCita() {
-    console.log(this.cita.getCita());
+    let cita = new Cita({
+      fecha: new Fecha (14,5,2020),
+      hora: new hora(12),
+      doctor: new Doctor("gabriel luna"),
+      paciente: new Paciente ("Alex")
+    })
+    console.log(cita.getCita());
   }
 
   probarHospital(){
-    this.hospital.registrarDoctor(this.doctor);
-    this.hospital.registrarCita(this.cita);
-    this.hospital.listarDoctores();
-    this.hospital.listarCitas();
+    let hospital = new Hospital ({
+      nombre: "Hospital Paso al infierno",
+      direccion: "AV. Nueva calle chida #145"
+    })
+    hospital.registrarDoctor(this.doctor);
+    hospital.registrarCita(this.cita);
+    hospital.listarDoctores();
+    hospital.listarCitas();
+    hospital.buscarCita(this.cita)
+    hospital.encontrarIndiceCita(this.cita)
+    hospital.eliminarCita(this.cita)
   }
 }
 let app = new Main();
