@@ -15,6 +15,6 @@ export default class PacienteAsegurado extends Paciente {
 
 
     getPerfil(){
-        return `${this.nombre.getNombreCompleto()}, fecha de nacimineto: ${this. fechaNacimiento.getFecha()}, telefono ${this.telefono}, numero de poliza: ${this.numeroPoliza}, vigencia de la poliza: ${this.finVigencia}`
+        return `${this.nombre.getNombreCompleto()}, fecha de nacimineto: ${this. fechaNacimiento.getFecha()}, telefono ${this.telefono}, numero de poliza: ${this.numeroPoliza}, vigencia de la poliza: ${this.finVigencia}, compañia: ${this.compañia}`
     }
 }

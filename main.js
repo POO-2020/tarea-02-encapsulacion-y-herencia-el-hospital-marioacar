@@ -5,6 +5,7 @@ import Doctor from './doctor.js';
 import Paciente from './paciente.js';
 import Cita from './cita.js';
 import Hospital from './hospital.js';
+import PacienteAsegurado from "./pacienteAsegurado.js"
 
 class Main {
   constructor() {
@@ -91,6 +92,19 @@ class Main {
     hospital.eliminarCita(this.cita)
   }
 }
+
+probarPacienteAsegurado(){
+  let sujeto0 = new PacienteAsegurado({
+    nombre = new Nombre ("Ansel", "MCtrevis", "Aslt"),
+    fechaNacimiento: new fechaNacimiento(10,2,2000),
+    telefono:3125518970,
+    numeroPoliza: 30877450629,
+    finVigencia: new finVigencia(11,11,2020),
+    compañia: "Archam",
+  })
+
+  console.log(sujeto0.getPerfil)
+}
 let app = new Main();
 
 app.probarTiempo();
@@ -100,3 +114,4 @@ app.probarPaciente();
 app.probarDoctor();
 app.probarCita();
 app.probarHospital();
+app.probarPacienteAsegurado()
